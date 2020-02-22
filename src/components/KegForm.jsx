@@ -30,10 +30,11 @@ function KegForm(props) {
     fontWeight: 'bold',
     margin: '5px',
   }
-  function handleKegSubmission(e){
+  const handleKegSubmission = (e) =>  {
     e.preventDefault();
     props.createKeg({name: _name.value, brand: _brand.value, price: _price.value, content: _content.value})
   }
+
 
   return (
     <div style={kegFormStyle}>

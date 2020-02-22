@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: []
+      masterKegList: [],
     };
     this.createKeg = this.createKeg.bind(this);
   }
@@ -24,14 +24,13 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.masterKegList);
     return (
       <div className="App">
       <Header/>
       <Switch>
       <Route exact path='/' render={()=><Home/>} />
       <Route exact path='/menu' component={KegList} />
-      <Route exact path='/add' render={()=><KegForm createKeg={this.createKeg} masterKegList={this.state.masterKegList} />} />
+      <Route exact path='/add' render={()=><KegForm location={this.state.location} createKeg={this.createKeg} masterKegList={this.state.masterKegList} />} />
       </Switch>
       <Footer/>
       </div>
