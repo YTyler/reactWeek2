@@ -1,13 +1,21 @@
 import React from 'react';
 
-function KegForm() {
+
+function KegForm(props) {
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _content = null;
+
   const kegFormStyle = {
     backgroundColor: '#574B21',
-    textAlign: 'left',
+    textAlign: 'center',
     border: '1px solid black',
     boxShadow: '0px 0px 10px black',
     fontSize: '20px',
     margin: '5px',
+    marginRight: '10px',
+    marginLeft: '10px',
     padding: '0px 10px 20px 20px',
     color: 'gold',
     textShadow: '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black',
@@ -18,19 +26,29 @@ function KegForm() {
     textAlign: 'center',
     fontSize: '40px'
   }
+  const buttonStyle = {
+    fontWeight: 'bold',
+    margin: '5px',
+  }
+  function handleKegSubmission(e){
+    e.preventDefault();
+    props.createKeg({})
+  }
 
   return (
     <div style={kegFormStyle}>
-      <form>
+      <form onSubmit={handleKegSubmission}>
       <h1 style={titleStyle}><u>Enter Info for the New Keg</u></h1>
-      <label for="name">Name:  </label><br></br>
-      <input type="text" name="name" ></input><br></br>
-      <label for="brand">Brand:</label><br></br>
-      <input type="text" name="brand" ></input><br></br>
-      <label for="price">Price:</label><br></br>
-      <input type="text" name="price" ></input><br></br>
-      <label for="alcohol">Alcohol Content:</label><br></br>
-      <input type="text" name="alcohol" ></input><br></br>
+      <input type="text" placeholder="Name" ref={(input) => {_name = input}} ></input>
+      <br></br>
+      <input type="text" placeholder="Brand" ref={(input) => {_brand = input}}></input>
+      <br></br>
+      <input type="text" placeholder="Price" ref={(input) => {_price = input}}></input>
+      <br></br>
+      <input type="text" placeholder="Alcohol Content" ref={(input) => {_content = input}}></input>
+      <br></br>
+      <br></br>
+      <button type='submit' style={buttonStyle}>Create</button>
       </form>
     </div>
   );

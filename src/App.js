@@ -7,18 +7,29 @@ import KegList from './components/KegList.jsx';
 import Home from './components/Home.jsx';
 import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-    <Header/>
-    <Switch>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterKegList: []
+    };
+  }
+
+
+
+
+  render() {
+    return (
+      <div className="App">
+      <Header/>
+      <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/menu' component={KegList} />
       <Route exact path='/add' component={KegForm} />
-    </Switch>
-    <Footer/>
-    </div>
-  );
+      </Switch>
+      <Footer/>
+      </div>
+    );
+  }
 }
-
 export default App;
