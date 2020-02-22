@@ -29,8 +29,8 @@ class App extends React.Component {
       <Header/>
       <Switch>
       <Route exact path='/' render={()=><Home/>} />
-      <Route exact path='/menu' component={KegList} />
-      <Route exact path='/add' render={()=><KegForm location={this.state.location} createKeg={this.createKeg} masterKegList={this.state.masterKegList} />} />
+      <Route exact path='/menu' render={()=><KegList masterKegList={this.state.masterKegList} />} />
+      <Route exact path='/add' render={()=><KegForm createKeg={this.createKeg} />} />
       </Switch>
       <Footer/>
       </div>

@@ -44,7 +44,7 @@ function KegForm(props) {
       <br></br>
       <input type="text" placeholder="Brand" ref={(input) => {_brand = input}}></input>
       <br></br>
-      <input type="text" placeholder="Price" ref={(input) => {_price = input}}></input>
+      <input type="number" placeholder="Price" ref={(input) => {_price = input}}></input>
       <br></br>
       <input type="text" placeholder="Alcohol Content" ref={(input) => {_content = input}}></input>
       <br></br>
