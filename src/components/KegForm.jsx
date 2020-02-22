@@ -44,9 +44,9 @@ function KegForm(props) {
       <br></br>
       <input type="text" placeholder="Brand" ref={(input) => {_brand = input}}></input>
       <br></br>
-      <input type="number" placeholder="Price" ref={(input) => {_price = input}}></input>
+      <input type="number" placeholder="Price (ex: 6.50)" step='0.01' ref={(input) => {_price = input}}></input>
       <br></br>
-      <input type="text" placeholder="Alcohol Content" ref={(input) => {_content = input}}></input>
+      <input type="number" placeholder="Alcohol Content (ex: 5.5)" step='0.1' ref={(input) => {_content = input}}></input>
       <br></br>
       <br></br>
       <button type='submit' style={buttonStyle}>Create</button>

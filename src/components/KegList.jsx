@@ -7,8 +7,9 @@ function KegList(props) {
     backgroundColor: '#574B21',
     textAlign: 'center',
     border: '1px solid black',
+    borderRadius: '15px',
     boxShadow: '0px 0px 10px black',
-    fontSize: '3vw',
+    fontSize: '48px',
     margin: '5px',
     paddingTop: '5px',
     paddingBottom: '10px',
@@ -17,13 +18,14 @@ function KegList(props) {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
     margin: '5vw',
+    fontSize: '25px',
   }
 
   const masterKegList = [
     {
       name: 'name1',
       brand: 'brand1',
-      price: '1.00',
+      price: '1.2',
       content: '1',
       key: 1
     },
@@ -57,8 +59,8 @@ function KegList(props) {
         <Keg
         name={keg.name}
         brand={keg.brand}
-        price={keg.price}
-        content={keg.content}
+        price={Number(keg.price).toFixed(2)}
+        content={Number(keg.content).toFixed(1)}
         />
       )
     }
