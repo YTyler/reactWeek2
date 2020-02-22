@@ -13,19 +13,25 @@ class App extends React.Component {
     this.state = {
       masterKegList: []
     };
+    this.createKeg = this.createKeg.bind(this);
+  }
+
+  createKeg(newKeg) {
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newKeg)
+    this.setState({masterKegList: newMasterKegList})
   }
 
 
-
-
   render() {
+    console.log(this.state.masterKegList);
     return (
       <div className="App">
       <Header/>
       <Switch>
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' render={()=><Home/>} />
       <Route exact path='/menu' component={KegList} />
-      <Route exact path='/add' component={KegForm} />
+      <Route exact path='/add' render={()=><KegForm createKeg={this.createKeg} masterKegList={this.state.masterKegList} />} />
       </Switch>
       <Footer/>
       </div>

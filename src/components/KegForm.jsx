@@ -32,7 +32,7 @@ function KegForm(props) {
   }
   function handleKegSubmission(e){
     e.preventDefault();
-    props.createKeg({})
+    props.createKeg({name: _name.value, brand: _brand.value, price: _price.value, content: _content.value})
   }
 
   return (
