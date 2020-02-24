@@ -55,7 +55,7 @@ function KegList(props) {
   <div style={kegListStyle}>
     <h1>Keg List</h1>
     <div style={productListStyle}>
-      {masterKegList.map((keg, index) =>
+      {props.masterKegList.map((keg, index) =>
         <Keg
         name={keg.name}
         brand={keg.brand}
